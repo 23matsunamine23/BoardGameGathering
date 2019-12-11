@@ -1,0 +1,84 @@
+header{
+  background-color: #EFECE7;
+  .logo{
+    background-color: #000;
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0;
+    text-align: center;
+    #logo{
+      color: #fff;
+      display: block;
+      font-size: 3rem;
+      font-weight: bold; 
+      letter-spacing: 0.2rem;
+      text-decoration: none;
+    }
+  }
+  .search{
+    margin: auto;
+    &__form{
+      text-align: center;
+      #keyword{
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        padding: 1rem;
+        width: 23rem;
+      }
+      &__button{
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 1.1rem 1.5rem;
+      }
+    }
+  }
+  .head-icons{
+  line-height: 6rem;
+    .head-icon{
+      color: #202020;
+      margin-left: 0.5rem;
+      text-decoration: none;
+    }
+  }
+}
+// TOP画面
+.main-title{
+  text-align: center;
+  .logo{
+    font-size: 14rem;
+    line-height: 1;
+  }
+  .description{
+    margin-top: 3rem;
+  }
+}
+.function-icons{
+  margin-top: 10rem;
+  .col-4{
+    text-align: center;
+    .function-icon{
+      font-size: 9rem;
+    }
+    .description{
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .main-text{
+      font-size: 1.5rem;
+      margin: 0 auto;
+      width: 23rem;
+    }
+  }
+}
+
+footer{
+  border-top: 1px solid #000;
+  margin-top: 2rem;
+  text-align: center;
+  .copyright{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+}

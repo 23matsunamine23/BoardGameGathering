@@ -1,26 +1,27 @@
-.row.head-nav
-  .col-2
-    .logo
-      =link_to  root_path, id: "logo" do
-        | BGG
-  .col-4
-    .search
-      = form_with method: :get, class: 'search-form', local: true do |f|
-        = f.text_field :keyword, placeholder: "キーワードを入力してください"
-        = f.submit "検索"
-  .col-6
-    ul.head-icons.nav
-      li.head-icon
-        = link_to "#", class: "sign_up" do
-          = icon("fa", "edit")
-          | 新規登録
-      li.head-icon
-        = link_to "#", class: "sign_in" do
-          = icon("fa", "sign-in-alt")
-          | ログイン
-      li.head-icon
-        = link_to "#" do
-          = icon("fa", "arrow-up")
-          | 上へ
+.row
+  .col-2.logo
+    =link_to root_path, id: "logo" do
+      | BGG
+  .col-4.search
+    = form_with method: :get, class: 'search__form', local: true do |f|
+      = f.text_field :keyword, placeholder: "キーワードを入力してください"
+      = f.submit "検索", class: "search__form__button"
+  ul.col-6.head-icons.nav
+    li
+      = link_to "#", class: "head-icon" do
+        = icon("fa", "edit")
+        | 新規登録
+    li
+      = link_to "#", class: "head-icon" do
+        = icon("fa", "sign-in-alt")
+        | ログイン
+    li
+      = link_to "#", class: "head-icon" do
+        = icon("fa", "comment-dots")
+        | 投稿一覧
+    li
+      = link_to "#", class: "head-icon" do
+        = icon("fa", "arrow-up")
+        | 上へ
 
 
