@@ -1,24 +1,29 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+h2.devise-title
+  | 新規登録
+= form_with url: "/tops/index", model: @user, local: true do |f|
+  table.devise-table
+    tr
+      th = f.label :last_name, "苗字"
+      td = f.text_field :last_name, class: "devise-text"
+    tr
+      th = f.label :fisrt_name, "名前"
+      td = f.text_field :fiest_name, class: "devise-text"
+    tr
+      th  性別
+      td
+        = f.radio_button :sex, 1
+        = f.label :sex, "男"
+        = f.radio_button :sex, 2
+        = f.label :sex, "女"
+    tr
+      th = f.label :email, "メールアドレス"
+      td = f.email_field :email, autocomplete: "email", class: "text"
+    tr
+      th = f.label :password, "パスワード"
+      td
+        = f.password_field :password, autocomplete: "password", class: "text"
+    tr
+      th = f.label :password_confirmation, "パスワード(再入力)"
+      td = f.password_field :password_confirmation, autocomplete: "password", class: "text"
+  .sent
+    = f.submit "登録する"
