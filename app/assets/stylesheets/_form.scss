@@ -1,0 +1,25 @@
+.devise-title{
+  border-bottom: 0.2rem solid #000;
+  color: #000;
+  margin-bottom: 3rem;
+  padding: 1rem 0;
+}
+.devise-label{
+  font-size: 1.2rem;
+  padding: 2.2rem 2.5rem 2.2rem 0;
+}
+.devise-text{
+  @include input;
+}
+.sent{
+  text-align: center;
+  margin: 2rem 0;
+  .devise-btn{
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1.1rem 3.5rem;
+  }
+}
+.space{
+  margin-left: 1rem;
+}

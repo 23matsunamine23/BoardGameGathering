@@ -1,29 +1,29 @@
 h2.devise-title
   | 新規登録
 = form_with url: "/tops/index", model: @user, local: true do |f|
-  table.devise-table
+  table
     tr
-      th = f.label :last_name, "苗字"
-      td = f.text_field :last_name, class: "devise-text"
+      th = f.label :last_name, "苗字", class: "devise-label"
+      td = f.text_field :last_name, autofocus: true, class: "devise-text"
     tr
-      th = f.label :fisrt_name, "名前"
+      th = f.label :fisrt_name, "名前", class: "devise-label"
       td = f.text_field :fiest_name, class: "devise-text"
     tr
-      th  性別
+      th.devise-label  性別
       td
         = f.radio_button :sex, 1
         = f.label :sex, "男"
-        = f.radio_button :sex, 2
+        = f.radio_button :sex, 2, class: "space"
         = f.label :sex, "女"
     tr
-      th = f.label :email, "メールアドレス"
-      td = f.email_field :email, autocomplete: "email", class: "text"
+      th = f.label :email, "メールアドレス", class: "devise-label"
+      td = f.email_field :email, autocomplete: "email", class: "devise-text"
     tr
-      th = f.label :password, "パスワード"
+      th = f.label :password, "パスワード", class: "devise-label"
       td
-        = f.password_field :password, autocomplete: "password", class: "text"
+        = f.password_field :password, autocomplete: "password", class: "devise-text"
     tr
-      th = f.label :password_confirmation, "パスワード(再入力)"
-      td = f.password_field :password_confirmation, autocomplete: "password", class: "text"
+      th = f.label :password_confirmation, "パスワード(再入力)", class: "devise-label"
+      td = f.password_field :password_confirmation, autocomplete: "password", class: "devise-text"
   .sent
-    = f.submit "登録する"
+    = f.submit "登録する", class: "btn btn-outline-dark devise-btn"
