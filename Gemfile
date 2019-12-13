@@ -64,6 +64,7 @@ gem 'devise'
 gem 'font-awesome-sass'
 gem 'html2slim'
 gem 'jquery-rails'
+gem 'pry-rails'
 gem 'slim-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
