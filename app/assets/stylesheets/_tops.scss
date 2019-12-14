@@ -1,9 +1,9 @@
 header{
   background-color: #EFECE7;
-  margin-bottom: 6rem;
   position: fixed;
   top: 0;
-  width: 78%;
+  left: 4.4rem;
+  width: 95%;
   z-index: 1;
   .logo{
     height: 6rem;
@@ -15,7 +15,7 @@ header{
       display: block;
       font-size: 3rem;
       font-weight: bold; 
-      letter-spacing: 0.2rem;
+      letter-spacing: 1.2rem;
       text-decoration: none;
     }
   }
@@ -39,11 +39,12 @@ header{
   line-height: 6rem;
     .head-icon{
       color: #202020;
-      margin-left: 0.5rem;
+      margin-left: 0.8rem;
       text-decoration: none;
     }
   }
 }
+
 // TOP画面
 .main-title{
   text-align: center;
@@ -76,8 +77,9 @@ header{
 
 footer{
   border-top: 1px solid #000;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   text-align: center;
+  width: 95%;
   .copyright{
     font-size: 1.2rem;
     margin-top: 3rem;

@@ -2,19 +2,41 @@
   .col-2.logo.bg-dark
     =link_to root_path, id: "logo" do
       | BGG
-  .col-5.search
+  .col-4.search
     = form_with method: :get, class: 'search__form', local: true do |f|
       = f.text_field :keyword, placeholder: "キーワードを入力してください"
       = f.submit "検索", class: "search__form__button"
-  ul.col-5.head-icons.nav
-    li
-      = link_to new_user_registration_path, class: "head-icon" do
-        = icon("fa", "edit")
-        | 新規登録
-    li
-      = link_to new_user_session_path, class: "head-icon" do
-        = icon("fa", "sign-in-alt")
-        | ログイン
+  ul.col-6.head-icons.nav
+    - if user_signed_in?
+      li
+        = link_to new_user_registration_path, class: "head-icon" do
+          = icon("fa", "edit")
+          | 新規登録
+      li
+        = link_to new_user_session_path, class: "head-icon" do
+          = icon("fa", "sign-in-alt")
+          | ログイン
+    - else
+      li
+        = link_to new_tweet_path, class: "head-icon" do
+          = icon 'fa', 'paper-plane'
+          | 投稿する
+      li
+        = link_to new_user_session_path, class: "head-icon" do
+          = icon "fa", 'sign-out-alt'
+          | ログアウト
+      li
+        = link_to new_user_session_path, class: "head-icon" do
+          = icon("fa", "user")
+          | マイページ
+      li
+        = link_to new_user_session_path, class: "head-icon" do
+          = icon("fa", "heart")
+          | いいねした投稿
+      li
+        = link_to new_user_session_path, class: "head-icon" do
+          = icon("fa", "user-edit")
+          | 自分の投稿
     li
       = link_to tweets_path, class: "head-icon" do
         = icon("fa", "comment-dots")
