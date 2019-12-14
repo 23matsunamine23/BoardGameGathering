@@ -11,6 +11,9 @@
 .devise-text{
   @include input;
 }
+.remember-check{
+  margin-top: 3rem;
+}
 .sent{
   text-align: center;
   margin: 2rem 0;
