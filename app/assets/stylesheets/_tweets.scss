@@ -1,0 +1,37 @@
+.tweet{
+  border: 1px solid rgb(124, 107, 107);
+  border-radius: 1rem;
+  margin: 0.5rem auto 0;
+  width: 90%; 
+}
+.avatar{
+  height: 7rem;
+  width: 7rem; 
+}
+.main-content{
+  margin-left: 1rem;
+  width: 100%; 
+  .upper-tweet{
+    &__name{
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+    &__body{
+      font-size: 1.3rem;
+      min-height: 10rem;
+      padding-top: 1rem;
+    }
+  }
+  .lower-tweet{
+    font-size: 1rem;
+    margin: 1rem 0;
+    position: relative;
+    &__comments{
+      margin-left: 1.5rem;
+    }
+    &__date{
+      position: absolute;
+      right: 1rem;
+    }
+  }
+}
