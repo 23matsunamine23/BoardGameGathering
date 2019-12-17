@@ -7,7 +7,7 @@
       = f.text_field :keyword, placeholder: "キーワードを入力してください"
       = f.submit "検索", class: "search__form__button"
   ul.col-6.head-icons.nav
-    - if user_signed_in?
+    - unless user_signed_in?
       li
         = link_to new_user_registration_path, class: "head-icon" do
           = icon("fa", "edit")
@@ -22,7 +22,7 @@
           = icon 'fa', 'paper-plane'
           | 投稿する
       li
-        = link_to new_user_session_path, class: "head-icon" do
+        = link_to destroy_user_session_path, class: "head-icon", method: :delete  do
           = icon "fa", 'sign-out-alt'
           | ログアウト
       li
