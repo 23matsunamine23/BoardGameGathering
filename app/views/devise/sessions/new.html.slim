@@ -1,6 +1,6 @@
 h2.devise-title
   | ログイン
-= form_with url: "/tops/index", model: @user, local: true do |f|
+= form_with url: user_session_path, model: @user,  local: true do |f|
   table
     tr
       th = f.label :email, "メールアドレス", class: "devise-label"
