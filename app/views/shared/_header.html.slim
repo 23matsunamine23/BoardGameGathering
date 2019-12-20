@@ -26,7 +26,7 @@
           = icon "fa", 'sign-out-alt'
           | ログアウト
       li
-        = link_to new_user_session_path, class: "head-icon" do
+        = link_to user_path(current_user.id), class: "head-icon" do
           = icon("fa", "user")
           | マイページ
       li
