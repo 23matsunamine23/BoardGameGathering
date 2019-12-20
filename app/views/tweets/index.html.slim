@@ -15,3 +15,4 @@
           | ２件の返信
         .lower-tweet__date
           = tweet.created_at.strftime("%Y/%m/%d %H:%M")
+= paginate @tweets
