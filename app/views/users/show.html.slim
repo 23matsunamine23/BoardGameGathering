@@ -3,7 +3,8 @@ h2.devise-title
 .d-flex
   .avatar
     | ユーザー画像
-  = link_to "編集する", class: "edit-btn"
+  .edit-btn
+    = link_to "編集する", edit_user_path(@user), class: "btn btn-success"
 table
   tr
     th 名前
