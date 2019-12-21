@@ -1,0 +1,19 @@
+h2.devise-title
+  |マイページ
+.d-flex
+  .avatar
+    | ユーザー画像
+  = link_to "編集する", class: "edit-btn"
+table
+  tr
+    th 名前
+    td = @user.name
+  tr
+    th 性別
+    td = @user.sex == 1 ? "男" : "女"
+  tr
+    th メールアドレス
+    td = @user.email
+  tr
+    th 自己紹介
+    td = @user.profile
