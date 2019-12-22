@@ -4,9 +4,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include CarrierWave::MiniMagick
   version :thumb do
-    process resize_to_fill: [150, 150]
+    process resize_to_fill: [100, 100]
   end
-  process resize_to_fit: [150, 150]
+  process resize_to_fill: [150, 150]
 
   # Choose what kind of storage to use for this uploader:
   storage :file
