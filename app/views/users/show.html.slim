@@ -6,9 +6,8 @@ h2.devise-title
       = image_tag @user.avatar.url(:thumb), class: "avatar-img"
     - else
       = image_tag "no_image.png"
-  .edit-btn
-    = link_to "編集する", edit_user_path(@user), class: "btn btn-success"
-table
+  = button_to "編集する", edit_user_path(@user), method: :get, class: "edit-btn"
+table.table
   tr
     th 名前
     td = @user.name
