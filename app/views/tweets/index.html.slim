@@ -1,7 +1,7 @@
 - @tweets.each do |tweet|
   .tweet.d-flex
     .avatar
-      | ユーザー画像
+      =image_tag tweet.user.avatar.thumb.url
     .main-content
       .upper-tweet
         .upper-tweet__name
