@@ -8,6 +8,8 @@
           = tweet.user.name
         .upper-tweet__body.d-flex.wrap
           = tweet.body
+        = image_tag tweet.image1.url, class: 'upper-tweet__image' if tweet.image1.present?
+        = image_tag tweet.image2.url, class: 'upper-tweet__image' if tweet.image2.present?
       .lower-tweet.d-flex
         .lower-tweet__likes
           | いいね １
