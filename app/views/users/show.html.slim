@@ -2,7 +2,10 @@ h2.devise-title
   |マイページ
 .d-flex
   .avatar
-    | ユーザー画像
+    - if @user.avatar.present?
+      = image_tag @user.avatar.url(:thumb), class: "avatar-img"
+    - else
+      = image_tag "no_image.png"
   .edit-btn
     = link_to "編集する", edit_user_path(@user), class: "btn btn-success"
 table

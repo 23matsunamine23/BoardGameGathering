@@ -1,7 +1,7 @@
 h2.devise-title
   = @user.name
   | さんのマイページ編集
-= form_with model: @user, local: true do |f|
+= form_with model: @user, method: :put, local: true do |f|
   table
     tr
       th = f.label :avatar, "プロフィール画像", class: "devise-label"
