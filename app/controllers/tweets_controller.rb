@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
     render "tops/index"
   end
   def show
+    @tweet = Tweet.find(params[:id])
   end
   def mine
     @tweets = current_user.tweets.order(created_at: :desc).page(params[:page]).per(10)
