@@ -11,6 +11,9 @@ class TweetsController < ApplicationController
     @tweet.save
     render "tops/index"
   end
+  def show
+  end
+
 
   private
   def tweet_params
