@@ -1,5 +1,5 @@
 header{
-  background-color: #EFECE7;
+  background-color: rgb(240, 229, 195);
   position: fixed;
   top: 0;
   left: 4.4rem;
@@ -11,6 +11,7 @@ header{
     padding: 0;
     text-align: center;
     #logo{
+      background-color: #000;
       color: #fff;
       display: block;
       font-size: 3rem;
@@ -38,7 +39,7 @@ header{
   .head-icons{
   line-height: 6rem;
     .head-icon{
-      color: #202020;
+      color: #000000;
       margin-left: 0.8rem;
       text-decoration: none;
     }
