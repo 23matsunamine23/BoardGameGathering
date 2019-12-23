@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: 'tops#index'
   resources :tops
   resources :users
-    resources :tweets
+    resources :tweets do
+      member do
+        get 'mine'
+      end
+    end
 end
