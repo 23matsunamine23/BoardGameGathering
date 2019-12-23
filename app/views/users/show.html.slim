@@ -1,9 +1,9 @@
 h2.devise-title
   |マイページ
 .d-flex
-  .avatar
+  .avatar-150
     - if @user.avatar.present?
-      = image_tag @user.avatar.thumb150.url, class: "avatar-img"
+      = image_tag @user.avatar.thumb150.url
     - else
       = image_tag "no_image.png"
   = button_to "編集する", edit_user_path(@user), method: :get, class: "edit-btn"
