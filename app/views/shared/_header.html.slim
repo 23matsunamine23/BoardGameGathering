@@ -34,7 +34,7 @@
           = icon("fa", "heart")
           | いいねした投稿
       li
-        = link_to new_user_session_path, class: "head-icon" do
+        = link_to tweet_path(current_user.id), class: "head-icon" do
           = icon("fa", "user-edit")
           | 自分の投稿
     li
