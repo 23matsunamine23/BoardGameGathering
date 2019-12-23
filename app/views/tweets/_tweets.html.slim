@@ -1,10 +1,10 @@
 - @tweets.each do |tweet|
   .tweet.d-flex
-    .avatar
-      =image_tag tweet.user.avatar.thumb.url
+    = link_to user_path(tweet.user_id), class: 'avatar' do
+      =image_tag tweet.user.avatar.thumb.url, class: 'avatar__img'
     .main-content
       .upper-tweet
-        .upper-tweet__name
+        = link_to user_path(tweet.user_id), class: 'upper-tweet__name' do
           = tweet.user.name
         .upper-tweet__body.d-flex.wrap
           = tweet.body

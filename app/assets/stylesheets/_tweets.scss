@@ -4,13 +4,21 @@
   margin: 0.5rem auto 0;
   width: 90%; 
 }
+.avatar{
+  height: 100px;
+  &__img{
+    border-radius: 1rem;
+  }
+}
 .main-content{
   margin-left: 1rem;
   width: 100%; 
   .upper-tweet{
     &__name{
+      color: #000;
       font-size: 1.7rem;
       font-weight: bold;
+      text-decoration: none;
     }
     &__body{
       font-size: 1.3rem;
