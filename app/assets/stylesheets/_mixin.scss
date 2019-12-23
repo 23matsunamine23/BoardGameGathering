@@ -4,3 +4,7 @@
   padding: 1rem;
   width: 26rem;
 }
+@mixin link{
+  background-color: rgb(209, 187, 162);
+  border-radius: 0.5rem;
+}

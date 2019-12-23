@@ -20,10 +20,19 @@
       font-weight: bold;
       text-decoration: none;
     }
+    &__name:hover{
+      @include link;
+    }
     &__body{
+      color: #000;
+      display: block;
       font-size: 1.3rem;
       min-height: 10rem;
       padding-top: 1rem;
+      text-decoration: none;
+    }
+    &__body:hover{
+      @include link;
     }
   }
   .lower-tweet{
@@ -31,7 +40,12 @@
     margin: 1rem 0;
     position: relative;
     &__comments{
+      color: #000;
       margin-left: 1.5rem;
+      text-decoration: none;
+    }
+    &__comments:hover{
+      @include link;
     }
     &__date{
       position: absolute;
