@@ -1,0 +1,13 @@
+.comment
+  .upper-comment
+    .upper-comment__body
+      = comment.body
+  .lower-comment
+    .lower-comment__name
+      = comment.name
+    .lower-comment__date
+      = comment.created_at.strftime("%Y/%m/%d %H:%M")
+    .lower-comment__delete
+      = link_to '#' method: :delete do
+        = icon "fa", "trash", class: "comment-icon"
+    
