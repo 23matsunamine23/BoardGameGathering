@@ -53,3 +53,14 @@
 .space{
   margin-left: 1rem;
 }
+//コメントフォーム
+  .comment-label{
+    font-weight: bold;
+    margin-left: 5rem;
+  }
+  .comment-body{
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+  }
