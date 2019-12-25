@@ -13,6 +13,8 @@ class TweetsController < ApplicationController
   end
   def show
     @tweet = Tweet.find(params[:id])
+    @comment = Comment.new
+    @comments = @tweet.comments
   end
   def mine
     @tweets = current_user.tweets.order(created_at: :desc).page(params[:page]).per(10)
