@@ -1,0 +1,23 @@
+.comment{
+  @include post_box;
+}
+.upper-comment{
+  padding: 1rem;
+  &__body{
+    font-size: 1.3rem;
+  }
+}
+.lower-comment{
+  font-size: 1.1rem;
+  padding: 1rem;
+  &__name{
+    color: #000;
+    text-decoration: none;
+  }
+  &__name:hover{
+    @include link;
+  }
+  &__date{
+    margin-left: 0.4rem;
+  }
+}

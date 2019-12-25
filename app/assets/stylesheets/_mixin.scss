@@ -8,3 +8,10 @@
   background-color: rgb(219, 219, 219);
   border-radius: 0.5rem;
 }
+@mixin post_box{
+  background-color: #fff;
+  border: 1px solid rgb(124, 107, 107);
+  border-radius: 1rem;
+  margin: 0.5rem auto 0;
+  width: 90%; 
+}
