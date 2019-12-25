@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:show, :edit, :update]
   def index
     @tweets = Tweet.order(created_at: :desc).page(params[:page]).per(10)
   end
@@ -12,9 +13,14 @@ class TweetsController < ApplicationController
     render "tops/index"
   end
   def show
-    @tweet = Tweet.find(params[:id])
     @comment = Comment.new
     @comments = @tweet.comments
+  end
+  def edit
+  end
+  def update
+    @tweet.update(tweet_params)
+    redirect_to tweet_path(@tweet)
   end
   def mine
     @tweets = current_user.tweets.order(created_at: :desc).page(params[:page]).per(10)
@@ -24,5 +30,8 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     params.require(:tweet).permit(:body, :image1, :image2)
+  end
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
   end
 end
