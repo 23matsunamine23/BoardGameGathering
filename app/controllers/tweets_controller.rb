@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   def index
     @tweets = Tweet.order(created_at: :desc).page(params[:page]).per(10)
   end
@@ -19,8 +19,12 @@ class TweetsController < ApplicationController
   def edit
   end
   def update
-    @tweet.update(tweet_params)
+    @tweet.update(tweet_params) if @tweet.user_id == current_user.id
     redirect_to tweet_path(@tweet)
+  end
+  def destroy
+    @tweet.destroy if @tweet.user_id == current_user.id
+    redirect_to tweets_path
   end
   def mine
     @tweets = current_user.tweets.order(created_at: :desc).page(params[:page]).per(10)
