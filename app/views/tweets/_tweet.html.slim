@@ -15,7 +15,7 @@
     .lower-tweet.d-flex
       .lower-tweet__likes
         | いいね １
-      = link_to "3件のコメント", tweet_path(tweet.id), class: 'lower-tweet__comments'
+      = link_to "#{tweet.comments.count}件のコメント", tweet_path(tweet.id), class: 'lower-tweet__comments'
       .lower-tweet__date
         = tweet.created_at.strftime("%Y/%m/%d %H:%M")
 
