@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tweets do
     resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
     member do
       get 'mine'
     end
