@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   def index
     @tweets = Tweet.order(created_at: :desc).page(params[:page]).per(10)
+    @like = Like.new
   end
   def new
     @tweet = Tweet.new
