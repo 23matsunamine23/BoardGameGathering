@@ -30,6 +30,9 @@ class TweetsController < ApplicationController
   def mine
     @tweets = current_user.tweets.order(created_at: :desc).page(params[:page]).per(10)
   end
+  def favo
+    @tweets = current_user.liked_tweets.order(created_at: :desc).page(params[:page]).per(10)
+  end
 
 
   private

@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     member do
       get 'mine'
     end
+    collection do
+      get 'favo'
+    end
   end
 end

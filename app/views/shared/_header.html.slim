@@ -20,7 +20,7 @@
       li
         = link_to new_tweet_path, class: "head-icon" do
           = icon 'fa', 'paper-plane'
-          | 投稿する
+          | 投稿
       li
         = link_to destroy_user_session_path, class: "head-icon", method: :delete  do
           = icon "fa", 'sign-out-alt'
@@ -30,9 +30,9 @@
           = icon("fa", "user")
           | マイページ
       li
-        = link_to new_user_session_path, class: "head-icon" do
+        = link_to favo_tweets_path, class: "head-icon" do
           = icon("fa", "heart")
-          | いいねした投稿
+          | お気に入りの投稿
       li
         = link_to mine_tweet_path(current_user.id), class: "head-icon" do
           = icon("fa", "user-edit")
