@@ -48,6 +48,15 @@
       position: absolute;
       right: 1rem;
     }
+    &__likes{
+      .fa-heart{
+        color: $heart;
+        margin-right: 1rem;
+      }
+      span{
+        color: $heart;
+      }
+    }
   }
 }
 //投稿ページ
