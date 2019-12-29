@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   devise_for :users
   root to: 'tops#index'
-  resources :users
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    member do
+      get :follows
+      get :followers
+    end
+  end
   resources :tweets do
     resources :comments, only: [:create]
     resource :likes, only: [:create, :destroy]
