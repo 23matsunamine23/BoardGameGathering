@@ -1,0 +1,14 @@
+h2.devise-title
+  | フォローしているユーザー
+- @users.each do |user|
+  .follow.d-flex
+    = link_to user_path(user), class: 'avatar' do
+      - if user.avatar.present?
+        =image_tag user.avatar.thumb.url, class: 'avatar__img'
+      - else
+        = image_tag "no_image.png", class: 'no-avatar'
+    .follow-user
+      = link_to user_path(user), class: 'follow-user__name'
+        p #{user.name}
+      .follow-user__profile
+        p #{user.profile}
