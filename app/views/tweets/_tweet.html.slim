@@ -1,6 +1,9 @@
 .tweet.d-flex
   = link_to user_path(tweet.user_id), class: 'avatar' do
-    =image_tag tweet.user.avatar.thumb.url, class: 'avatar__img'
+    - if tweet.user.avatar.present?
+      =image_tag tweet.user.avatar.thumb.url, class: 'avatar__img'
+    - else
+      = image_tag "no_image.png", class: 'no-avatar'
   .main-content
     .upper-tweet
       = link_to user_path(tweet.user_id), class: 'upper-tweet__name' do

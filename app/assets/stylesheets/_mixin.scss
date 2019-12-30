@@ -1,17 +1,25 @@
+//情報登録フォームのテキストに使用
 @mixin input{
   border-radius: 0.5rem;
   font-size: 1.5rem;
   padding: 1rem;
   width: 26rem;
 }
+// hoverした時に色を付けとして使用
 @mixin link{
   background-color: rgb(219, 219, 219);
   border-radius: 0.5rem;
 }
+// ツイートやコメントの大枠に使用
 @mixin post_box{
   background-color: #fff;
   border: 1px solid rgb(124, 107, 107);
   border-radius: 1rem;
   margin: 0.5rem auto 0;
   width: 90%; 
+}
+// aタグの文字色を黒にして、下線を消す
+@mixin a_none{
+  color: #000;
+  text-decoration: none;
 }

@@ -26,27 +26,27 @@
 .edit-description{
   font-size: 1rem;
 }
-.edit-btn{
+.page-btn{
   background-color: #343A40;
   border-radius: 0.5rem;
   color: white;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
-  margin: 25% 0 0 33%;
+  margin: 5rem 0 0 5rem;
   padding: 1.6rem 3.5rem;
 }
 .details{
   margin-top: 1.5rem;
   &__btn{
-    color:#000;
+    @include a_none;
     display: block;
     font-size: 2rem;
     margin: 0 9rem 0 4rem;
     padding: 0 3rem;
-    text-decoration: none;
   }
 }
+
 .avatar-150{
   margin-bottom: 3rem;
 }
@@ -63,4 +63,31 @@
     margin: 0 auto;
     padding: 1rem;
     width: 90%;
+  }
+// フォロー関連
+.follow{
+  margin-bottom: 1rem;
+  .follow-user{
+    padding: 0 3rem;
+    &__name{
+      @include a_none;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    &__profile{
+      font-size: 1.6rem;
+    }
+  }
+}
+  .follow-num{
+    @include a_none;
+    font-size: 1.6rem;
+    height: 0;
+    letter-spacing: 0.2rem;
+    line-height: 180px;
+    margin-left: 5rem;
+  }
+  .follow-num:hover{
+    @include a_none;
+    color:rgba(0, 0, 0, 0.6);
   }
