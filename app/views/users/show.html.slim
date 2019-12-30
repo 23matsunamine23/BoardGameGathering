@@ -1,12 +1,28 @@
 h2.devise-title
-  |マイページ
+  - if current_user.id == @user.id
+    |My Page
+  - else
+    = @user.name
+    |'s Page
 .d-flex
   .avatar-150
     - if @user.avatar.present?
       = image_tag @user.avatar.thumb150.url
     - else
       = image_tag "no_image.png"
-  = button_to "編集する", edit_user_path(@user), method: :get, class: "edit-btn"
+  - if current_user == @user
+    = button_to "編集する", edit_user_path(@user), method: :get, class: "page-btn"
+  - if current_user != @user
+    - if @user.followed_by?(current_user)
+      = button_to 'フォロー解除', user_relationships_path(@user.id), method: :delete, class: "page-btn"
+    - else  
+      = button_to 'フォローする', user_relationships_path(@user.id), method: :post, class: "page-btn"
+  = link_to followings_user_path(@user), class: 'follow-num' do
+    | フォロー
+    = @user.followings.count
+  = link_to  followers_user_path(@user), class: 'follow-num' do
+    | フォロワー
+    = @user.followers.count
 table.table
   tr
     th 名前
