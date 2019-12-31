@@ -2,10 +2,6 @@
   .col-2.logo
     =link_to root_path, id: "logo" do
       | BGG
-  .col-4.search
-    = form_with method: :get, class: 'search__form', local: true do |f|
-      = f.text_field :keyword, placeholder: "キーワードを入力してください"
-      = f.submit "検索", class: "search__form__button"
   ul.col-6.head-icons.nav
     - unless user_signed_in?
       li
@@ -45,5 +41,9 @@
       = link_to "#", class: "head-icon" do
         = icon("fa", "arrow-up")
         | 上へ
+  .col-4.search
+    = form_with method: :get, class: 'search__form', local: true do |f|
+      = f.text_field :keyword, placeholder: "キーワードを入力してください"
+      = f.submit "検索", class: "search__form__button"
 
 
