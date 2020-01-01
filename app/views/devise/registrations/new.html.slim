@@ -22,5 +22,8 @@ h2.devise-title
     tr
       th = f.label :password_confirmation, "パスワード(再入力)", class: "devise-label"
       td = f.password_field :password_confirmation, autocomplete: "password", class: "devise-text"
+    tr
+      th = f.label :like_games, "好きなボードゲーム", class: "devise-label"
+      td = f.text_field :like_games, class: "devise-text"
   .sent
     = f.submit "登録する", class: "btn btn-outline-dark devise-btn"
