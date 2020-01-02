@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy if @user.id == current_user.id
+    redirect_to root_path
+  end
+
   def followings
     @users = @user.followings
   end

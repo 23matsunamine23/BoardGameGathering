@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise  :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
   mount_uploader :avatar, ImageUploader
-  has_many :tweets
-  has_many :comments
+  has_many :tweets, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_tweets, through: :likes, source: :tweet
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id, dependent: :destroy
   has_many :followings, through: :active_relationships, source: :follower
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :following
   def already_liked?(tweet)
     self.likes.exists?(tweet_id: tweet.id)
