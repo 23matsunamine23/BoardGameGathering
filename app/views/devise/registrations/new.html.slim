@@ -17,13 +17,13 @@ h2.devise-title
       td = f.text_field :like_games, class: "devise-text"
     tr
       th = f.label :email, "メールアドレス", class: "devise-label"
-      td = f.email_field :email, autocomplete: "email", class: "devise-text"
+      td = f.email_field :email, class: "devise-text"
     tr
       th = f.label :password, "パスワード", class: "devise-label"
       td
-        = f.password_field :password, autocomplete: "password", class: "devise-text"
+        = f.password_field :password, class: "devise-text"
     tr
       th = f.label :password_confirmation, "パスワード(再入力)", class: "devise-label"
-      td = f.password_field :password_confirmation, autocomplete: "password", class: "devise-text"
+      td = f.password_field :password_confirmation, class: "devise-text"
   .sent
     = f.submit "登録する", class: "btn btn-outline-dark devise-btn"

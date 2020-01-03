@@ -1,7 +1,7 @@
 h2.devise-title
   = @user.name
   | さんのマイページ編集
-= form_with model: @user, method: :patch, local: true do |f|
+= form_with model: @user, method: :put, local: true do |f|
   table
     tr
       th = f.label :avatar, "プロフィール画像", class: "devise-label"
@@ -45,8 +45,8 @@ h2.devise-title
           | (パスワードを変更をしない時は空白のままにします)
   .sent
     = f.submit "変更する", class: "btn btn-outline-dark devise-btn"
-  h2.devise-title
-    | アカウントの削除
-  p 本当にこのアカウントを削除しますか？
-  .sent
-    = button_to 'アカウントの削除', user_path(@user), method: :delete, class: 'devise-btn'
+h2.devise-title
+  | アカウントの削除
+p 本当にこのアカウントを削除しますか？
+.sent
+  = button_to 'アカウントの削除', user_path(@user), method: :delete, class: 'devise-btn'
