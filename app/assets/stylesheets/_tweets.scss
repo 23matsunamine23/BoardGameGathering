@@ -2,9 +2,10 @@
   @include post_box;
 }
 .avatar{
-  height: 100px;
   &__img{
     border-radius: 1rem;
+    display: block;
+    height: 100px;
   }
 }
 .no-avatar{

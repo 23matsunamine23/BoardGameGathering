@@ -3,7 +3,7 @@
     - if @tweet.user.avatar.present?
       =image_tag @tweet.user.avatar.thumb.url, class: 'avatar__img'
     - else
-      =image_tag 'no_image.png'
+      =image_tag 'no_image.png', class: 'avatar__img'
   .main-content
     .upper-tweet
       = link_to user_path(@tweet.user_id), class: 'upper-tweet__name' do
