@@ -71,6 +71,7 @@ end
 gem 'bootstrap', ">= 4.3.1"
 gem 'carrierwave'
 gem 'devise'
+gem 'fog-aws'
 gem 'font-awesome-sass'
 gem 'html2slim'
 gem 'jquery-rails'
