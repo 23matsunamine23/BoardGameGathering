@@ -22,22 +22,22 @@ http://52.192.68.43/
 - Ruby on Rails 5.2.3
 - MYSQL
 - SCSS,Bootstrap
-<!-- - Docker -->
 - GitHub,Git
+<!-- - Docker -->
 <!-- - Rspec -->
 - AWS
   - EC2
+  - S3
 <!-- ECS
 ECR
 RDS for MySQL
 ALB
 Route53 -->
-  - S3
 <!-- ACM
 circleci -->
-## テスト
+<!-- ## テスト
 - Rspec
   - 単体テスト（モデル）
   - 統合テスト（systemspec）
 ## circleci
-masterブランチへプッシュすると、 circleciで自動ビルド・自動テスト・自動デプロイ、タスク定義の更新とmigrationを行います。
+masterブランチへプッシュすると、 circleciで自動ビルド・自動テスト・自動デプロイ、タスク定義の更新とmigrationを行います。 -->
