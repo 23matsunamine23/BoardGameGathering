@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'test_sessions/create'
   get 'relationships/create'
   get 'relationships/destroy'
   devise_for :users
