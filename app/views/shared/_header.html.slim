@@ -39,8 +39,8 @@
         | 投稿一覧
     li
       = link_to "#", class: "head-icon" do
-        = icon("fa", "arrow-up")
-        | 上へ
+        = icon("fa", "home")
+        | TOPへ
   .col-4.search
     = form_with method: :get, class: 'search__form', local: true do |f|
       = f.text_field :keyword, placeholder: "キーワードを入力してください"
