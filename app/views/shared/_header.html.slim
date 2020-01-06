@@ -41,6 +41,11 @@
       = link_to "#", class: "head-icon" do
         = icon("fa", "home")
         | TOPへ
+    - unless user_signed_in?
+      = form_with model: @user, url: user_session_path, local: true do |f|
+        = f.hidden_field :email, value: 'test@example.com'
+        = f.hidden_field :password, value: 'password'
+        = f.submit "かんたんログイン", class: "btn btn-lg btn-outline-dark devise-btn head-icon"
   .col-4.search
     = form_with method: :get, class: 'search__form', local: true do |f|
       = f.text_field :keyword, placeholder: "キーワードを入力してください"

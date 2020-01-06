@@ -10,8 +10,11 @@ h2.devise-title
       = image_tag @user.avatar.thumb150.url
     - else
       = image_tag "no_image.png"
-  - if current_user == @user
+  - if current_user == @user && current_user.name != 'テスト太郎'
     = button_to "編集する", edit_user_path(@user), method: :get, class: "page-btn"
+  - elsif current_user.name == 'テスト太郎' && @user.name == 'テスト太郎'
+    .not-edit
+      p テストユーザーは編集ができません
   - if current_user != @user
     - if @user.followed_by?(current_user)
       = button_to 'フォロー解除', user_relationships_path(@user.id), method: :delete, class: "page-btn"
