@@ -34,7 +34,9 @@ class TweetsController < ApplicationController
   def favo
     @tweets = current_user.liked_tweets.order(created_at: :desc).page(params[:page]).per(10)
   end
-
+  def search
+    @tweets = Tweet.joins(:user).where('(body LIKE ?) OR (name LIKE ?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").order(created_at: :desc).page(params[:page]).per(10)
+  end
 
   private
   def tweet_params
