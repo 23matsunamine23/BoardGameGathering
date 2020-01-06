@@ -1,0 +1,6 @@
+- if model.errors.present?
+  .errors.alert.alert-danger
+    h2 入力エラーです
+    ul
+      - model.errors.full_messages.each do |msg|
+        li = msg

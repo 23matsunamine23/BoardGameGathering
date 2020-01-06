@@ -11,8 +11,11 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
-    @tweet.save
-    render "tops/index"
+    if @tweet.save
+      render "tops/index"
+    else
+      render :new
+    end
   end
   def show
     @comment = Comment.new

@@ -1,5 +1,6 @@
 h1.tweet-title.font-weight-bold
   | 投稿作成
+= render 'shared/errors', model: @tweet
 = form_with model: @tweet, local: true do |f|
   .tweet-body
     = f.label :body, "本文", class: "d-block"
