@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      tweet: ツイート
+    attributes:
+      tweet:
+        body: 本文
