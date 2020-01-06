@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!,only: [:show]
   def index
     @tweets = Tweet.order(created_at: :desc).page(params[:page]).per(10)
     @like = Like.new
