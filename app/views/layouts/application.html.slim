@@ -7,11 +7,14 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta name="viewport" content="width=device-width,initial-scale=1"
   body
-    header
-      =render "shared/header"
-    .container
+    .container-fluid.p-0
+      header
+        =render "shared/header"
+    .container-fluid.p-0
       main
         = yield
-    footer
-      =render "shared/footer"
+    .container-fluid.p-0
+      footer
+        =render "shared/footer"

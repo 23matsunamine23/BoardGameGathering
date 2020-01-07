@@ -1,20 +1,16 @@
 header{
   background-color: rgb(236, 235, 235);
   position: fixed;
-  top: 0;
-  left: 4.4rem;
-  width: 95%;
+  width: 100vw;
   z-index: 1;
   .logo{
-    height: 6rem;
     line-height: 6rem;
-    padding: 0;
     text-align: center;
     #logo{
       background-color: #000;
       color: #fff;
       display: block;
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: bold; 
       letter-spacing: 1.2rem;
       text-decoration: none;

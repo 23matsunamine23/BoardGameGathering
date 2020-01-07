@@ -1,8 +1,8 @@
 .row
-  .col-2.logo
+  .col-12.col-sm-2.logo
     =link_to root_path, id: "logo" do
       | BGG
-  ul.col-6.head-icons.nav
+  ul.col-12.col-sm-6.head-icons.nav
     - unless user_signed_in?
       li
         = link_to new_user_registration_path, class: "head-icon" do
@@ -42,7 +42,7 @@
         = f.hidden_field :email, value: 'test@example.com'
         = f.hidden_field :password, value: 'password'
         = f.submit "かんたんログイン", class: "btn btn-lg btn-outline-dark devise-btn head-icon"
-  .col-4.search
+  .col-sm-4.col-12.search
     = form_with url: search_tweets_path, method: :get, class: 'search__form', local: true do |f|
       = f.text_field :keyword, placeholder: "キーワードを入力してください"
       = f.submit "検索", class: "search__form__button"
