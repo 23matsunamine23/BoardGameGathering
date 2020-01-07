@@ -1,50 +1,51 @@
-.row
-  .col-12.col-sm-2.logo
-    =link_to root_path, id: "logo" do
-      | BGG
-  ul.col-12.col-sm-6.head-icons.nav
-    - unless user_signed_in?
+.container-fluid.p-0
+  .row
+    .col-12.col-xl-2.logo
+      =link_to root_path, id: "logo" do
+        | BGG
+    ul.col-12.col-xl-6.head-icons.nav
+      - unless user_signed_in?
+        li
+          = link_to new_user_registration_path, class: "head-icon" do
+            = icon("fa", "edit")
+            | 新規登録
+        li
+          = link_to new_user_session_path, class: "head-icon" do
+            = icon("fa", "sign-in-alt")
+            | ログイン
+      - else
+        li
+          = link_to new_tweet_path, class: "head-icon" do
+            = icon 'fa', 'paper-plane'
+            | 投稿
+        li
+          = link_to destroy_user_session_path, class: "head-icon", method: :delete  do
+            = icon "fa", 'sign-out-alt'
+            | ログアウト
+        li
+          = link_to user_path(current_user.id), class: "head-icon" do
+            = icon("fa", "user")
+            | My Page
+        li
+          = link_to favo_tweets_path, class: "head-icon" do
+            = icon("fa", "heart")
+            | お気に入りの投稿
+        li
+          = link_to mine_tweet_path(current_user.id), class: "head-icon" do
+            = icon("fa", "user-edit")
+            | 自分の投稿
       li
-        = link_to new_user_registration_path, class: "head-icon" do
-          = icon("fa", "edit")
-          | 新規登録
-      li
-        = link_to new_user_session_path, class: "head-icon" do
-          = icon("fa", "sign-in-alt")
-          | ログイン
-    - else
-      li
-        = link_to new_tweet_path, class: "head-icon" do
-          = icon 'fa', 'paper-plane'
-          | 投稿
-      li
-        = link_to destroy_user_session_path, class: "head-icon", method: :delete  do
-          = icon "fa", 'sign-out-alt'
-          | ログアウト
-      li
-        = link_to user_path(current_user.id), class: "head-icon" do
-          = icon("fa", "user")
-          | My Page
-      li
-        = link_to favo_tweets_path, class: "head-icon" do
-          = icon("fa", "heart")
-          | お気に入りの投稿
-      li
-        = link_to mine_tweet_path(current_user.id), class: "head-icon" do
-          = icon("fa", "user-edit")
-          | 自分の投稿
-    li
-      = link_to tweets_path, class: "head-icon" do
-        = icon("fa", "comment-dots")
-        | 投稿一覧
-    - unless user_signed_in?
-      = form_with model: @user, url: user_session_path, local: true do |f|
-        = f.hidden_field :email, value: 'test@example.com'
-        = f.hidden_field :password, value: 'password'
-        = f.submit "かんたんログイン", class: "btn btn-lg btn-outline-dark devise-btn head-icon"
-  .col-sm-4.col-12.search
-    = form_with url: search_tweets_path, method: :get, class: 'search__form', local: true do |f|
-      = f.text_field :keyword, placeholder: "キーワードを入力してください"
-      = f.submit "検索", class: "search__form__button"
+        = link_to tweets_path, class: "head-icon" do
+          = icon("fa", "comment-dots")
+          | 投稿一覧
+      - unless user_signed_in?
+        = form_with model: @user, url: user_session_path, local: true do |f|
+          = f.hidden_field :email, value: 'test@example.com'
+          = f.hidden_field :password, value: 'password'
+          = f.submit "かんたんログイン", class: "btn btn-lg btn-outline-dark devise-btn head-icon"
+    .col-12.col-xl-4.search
+      = form_with url: search_tweets_path, method: :get, class: 'search__form', local: true do |f|
+        = f.text_field :keyword, placeholder: "キーワードを入力してください"
+        = f.submit "検索", class: "search__form__button"
 
 

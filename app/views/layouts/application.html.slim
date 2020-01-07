@@ -5,16 +5,13 @@ html
       | BoardGameGathering
     = csrf_meta_tags
     = csp_meta_tag
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    meta name="viewport" content="width=device-width,initial-scale=1"
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'  
   body
-    .container-fluid.p-0
-      header
-        =render "shared/header"
-    .container-fluid.p-0
-      main
-        = yield
-    .container-fluid.p-0
-      footer
-        =render "shared/footer"
+    header
+      =render "shared/header"
+    main
+      = yield
+    footer
+      =render "shared/footer"
