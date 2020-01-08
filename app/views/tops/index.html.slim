@@ -1,19 +1,21 @@
 .main-title
   h2.logo
-    | BoardGame
+    | Board
+    br
+    | Game
     br
     | Gathering
   p.description BoardGameGatheringは、ボードゲームファンが集う情報共有サイトです。
 .row.function-icons
-  .col-4
-    = icon'fa', 'paper-plane', class: "function-icon"
+  .col-12.col-xl-4.function-icon
+    = icon'fa', 'paper-plane', class: "function-icon__fa"
     p.description 投稿機能
     p.main-text ログイン済みのユーザーなら、自由に投稿が可能。画像を二つまで挿入できます。
-  .col-4
-    = icon'fa', 'heart', class: "function-icon"
+  .col-12.col-xl-4.function-icon
+    = icon'fa', 'heart', class: "function-icon__fa"
     p.description いいね、フォロー機能
     p.main-text お気に入りの投稿やユーザーを登録することができます。
-  .col-4
-    = icon'fa', 'search', class: "function-icon"
+  .col-12.col-xl-4.function-icon
+    = icon'fa', 'search', class: "function-icon__fa"
     p.description 検索機能
     p.main-text 投稿内容とユーザー名から、検索をかけることができます。
