@@ -4,17 +4,17 @@ h1.tweet-title.font-weight-bold
 = form_with model: @tweet, local: true do |f|
   .tweet-body
     = f.label :body, "本文", class: "d-block"
-    = f.text_area :body, rows: 5, cols: 56, placeholder: "140文字以内で記入してください"
-  .tweet-images.d-flex
+    = f.text_area :body, rows: 5, cols: 56, placeholder: "140文字以内で記入してください",class: 'tweet-body__area'
+  .tweet-images
     .tweet-image
       = f.label :image1, class: "tweet-image__label" do
         | 画像を添付
         = icon 'fa', 'image', class: 'tweet-image__icon d-block'
         = f.file_field :image1, class: "d-none"
-    .tweet-image
+    .tweet-image.d-block
       = f.label :image2, class: "tweet-image__label" do
         | 画像を添付
-        = icon 'fa', 'image', class: 'tweet-image__icon d-block'
+        = icon 'fa', 'image', class: 'tweet-image__icon d-block' 
         = f.file_field :image2, class: "d-none"
   .sent
     = f.submit "投稿する", class: "btn btn-outline-dark devise-btn"

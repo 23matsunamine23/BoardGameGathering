@@ -66,13 +66,36 @@
   }
 }
 //投稿ページ
-.tweet-image{
-  margin: 1rem 25rem 1rem 12rem;
-  &__label{
-    cursor: pointer;
+.tweet-images{
+  display: flex;
+  .tweet-image{
+    margin: 1rem 25rem 1rem 12rem;
+    &__label{
+      cursor: pointer;
+    }
+    &__icon{
+      font-size: 20rem;
+    }
   }
-  &__icon{
-    font-size: 20rem;
+}
+@media screen and(max-width:767px){
+  .tweet-title{
+    text-align: center;
+  }
+  .tweet-body{
+    width: 100vw;
+    &__area{
+      border: 1px solid #000;
+      height: 20rem;
+      width: 90%;
+    }
+  }
+  .tweet-images{
+    display: block;
+    .tweet-image{
+      margin: 0;
+      text-align: center;
+    }
   }
 }
 
