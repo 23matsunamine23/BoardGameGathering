@@ -4,7 +4,7 @@ h2.devise-title
   - else
     = @user.name
     |'s Page
-.d-flex
+.d-flex.flex-wrap
   .avatar-150
     - if @user.avatar.present?
       = image_tag @user.avatar.thumb150.url

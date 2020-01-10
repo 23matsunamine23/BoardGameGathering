@@ -82,10 +82,16 @@
   .follow-num{
     @include a_none;
     font-size: 1.6rem;
-    height: 0;
     letter-spacing: 0.2rem;
     line-height: 180px;
     margin-left: 5rem;
+  }
+  @media screen and(max-width:767px){
+    .follow-num{
+      height: 10rem;
+      line-height: 10rem;
+      margin-left: 8rem;
+    }
   }
   .follow-num:hover{
     @include a_none;
