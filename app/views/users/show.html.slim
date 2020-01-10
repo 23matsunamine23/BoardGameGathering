@@ -20,12 +20,13 @@ h2.devise-title
       = button_to 'フォロー解除', user_relationships_path(@user.id), method: :delete, class: "page-btn"
     - else  
       = button_to 'フォローする', user_relationships_path(@user.id), method: :post, class: "page-btn"
-  = link_to followings_user_path(@user), class: 'follow-num' do
-    | フォロー
-    = @user.followings.count
-  = link_to  followers_user_path(@user), class: 'follow-num' do
-    | フォロワー
-    = @user.followers.count
+  .d-flex
+    = link_to followings_user_path(@user), class: 'follow-num' do
+      | フォロー
+      = @user.followings.count
+    = link_to  followers_user_path(@user), class: 'follow-num' do
+      | フォロワー
+      = @user.followers.count
 table.table
   tr
     th 名前
