@@ -20,6 +20,7 @@ header{
     margin: auto;
     &__form{
       text-align: center;
+      padding-bottom: 1rem;
       #keyword{
         @include input;
       }
@@ -42,6 +43,14 @@ header{
     @media screen and(max-width:767px){
       .head-icon{
         margin-left: 4.5rem;
+      }
+      .easy-login{
+        text-align: center;
+        width: 100%;
+        &__btn{
+          margin-bottom: 1rem;
+          padding: 1.3rem 7rem;
+        }
       }
     }
   }
