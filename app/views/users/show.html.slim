@@ -16,17 +16,8 @@ h2.devise-title
     .not-edit
       p テストユーザーは編集ができません
   - if current_user != @user
-    - if @user.followed_by?(current_user)
-      = button_to 'フォロー解除', user_relationships_path(@user.id), method: :delete, class: "page-btn"
-    - else  
-      = button_to 'フォローする', user_relationships_path(@user.id), method: :post, class: "page-btn"
-  .d-flex
-    = link_to followings_user_path(@user), class: 'follow-num' do
-      | フォロー
-      = @user.followings.count
-    = link_to  followers_user_path(@user), class: 'follow-num' do
-      | フォロワー
-      = @user.followers.count
+    = render 'follow_status'
+  = render 'follow_counter'
 table.table
   tr
     th 名前
