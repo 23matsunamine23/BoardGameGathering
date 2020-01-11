@@ -1,0 +1,7 @@
+.d-flex#follow-count
+  = link_to followings_user_path(@user), class: 'follow-num' do
+    | フォロー
+    = @user.followings.count
+  = link_to  followers_user_path(@user), class: 'follow-num' do
+    | フォロワー
+    = @user.followers.count
