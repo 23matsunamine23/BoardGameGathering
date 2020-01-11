@@ -2,11 +2,11 @@
   - if tweet.user_id != current_user.id
     div.lower-tweet__likes id="like-btn-#{tweet.id}"
       - if current_user.already_liked?(tweet)
-        #liked
+        #liked.d-inline
           = link_to tweet_likes_path(tweet.id), method: :delete, remote: true do
             = icon 'fas', 'heart'
       - else
-        #likeable
+        #likeable.d-inline
           = link_to tweet_likes_path(tweet.id), method: :post, remote: true do
             = icon 'far', 'heart'
       span #{tweet.likes.count}
