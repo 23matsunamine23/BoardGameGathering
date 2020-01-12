@@ -13,7 +13,7 @@
       = image_tag @tweet.image1.url, class: 'upper-tweet__image' if @tweet.image1.present?
       = image_tag @tweet.image2.url, class: 'upper-tweet__image' if @tweet.image2.present?
     .lower-tweet.d-flex
-      .lower-tweet__likes
+      .lower-tweet__likes.mr-4
         span いいね数  #{@tweet.likes.count}
       .lower-tweet__date
         = @tweet.created_at.strftime("%Y/%m/%d %H:%M")
