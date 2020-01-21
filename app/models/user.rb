@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships, source: :follower
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :following
+
+  validates :name, presence: true, length: { maximum: 6 }
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }
   def already_liked?(tweet)
     self.likes.exists?(tweet_id: tweet.id)
   end
